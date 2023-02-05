@@ -58,3 +58,9 @@ jobs:
       run: |
         pnpm run build
         pnpm run test:ci
+
+    - uses: actions/upload-artifact@v3
+      with:
+        name: capybara
+        path: tests/rails/tmp/capybara
+        retention-days: 5
