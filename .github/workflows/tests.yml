@@ -63,5 +63,5 @@ jobs:
       if: ${{ always() }}
       with:
         name: capybara
-        path: tests/rails/tmp/capybara
+        path: tests/rails/tmp/capybara/
         retention-days: 5
