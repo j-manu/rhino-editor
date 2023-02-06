@@ -62,5 +62,12 @@ jobs:
       if: ${{ always() }}
       with:
         name: capybara
-        path: tests/rails/tmp/capybara/
+        path: tmp/capybara/
+        retention-days: 5
+
+    - uses: actions/upload-artifact@v3
+      if: ${{ always() }}
+      with:
+        name: log
+        path: log
         retention-days: 5
