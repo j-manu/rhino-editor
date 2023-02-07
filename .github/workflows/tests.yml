@@ -57,17 +57,19 @@ jobs:
       run: |
         pnpm run build
         pnpm run test:ci
+        
+    - run: ls -a tests/rails/tmp/capybara/
 
     - uses: actions/upload-artifact@v3
       if: ${{ always() }}
       with:
         name: capybara
-        path: tmp/capybara/
+        path: tests/rails/tmp/capybara/
         retention-days: 5
 
     - uses: actions/upload-artifact@v3
       if: ${{ always() }}
       with:
         name: log
-        path: log
+        path: tests/rails/log/
         retention-days: 5
