@@ -58,7 +58,7 @@ jobs:
         pnpm run build
         pnpm run test:ci
         
-    - run: ls -a tests/rails/tmp/capybara/
+    - run: ls -a
 
     - uses: actions/upload-artifact@v3
       if: ${{ always() }}
