@@ -62,13 +62,13 @@ jobs:
     - uses: actions/upload-artifact@v3
       if: ${{ failure() }}
       with:
-        name: capybara
+        name: capybara ${{ matrix.ruby }} ${{ matrix.node-version }}
         path: tests/rails/tmp/capybara/
         retention-days: 5
 
     - uses: actions/upload-artifact@v3
       if: ${{ failure() }}
       with:
-        name: log
+        name: log ${{ matrix.ruby }} ${{ matrix.node-version }}
         path: tests/rails/log/
         retention-days: 5
